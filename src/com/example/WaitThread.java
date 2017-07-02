@@ -27,7 +27,9 @@ public class WaitThread implements Runnable{
 			local = LocalDevice.getLocalDevice();
 			local.setDiscoverable(DiscoveryAgent.GIAC);
 			
-			UUID uuid = new UUID(2852401); // "002b8631-0000-1000-8000-00805f9b34fb"
+			// for rasp berry uuid 
+			UUID uuid = new UUID("106d2780b38811e3a5e20800200c9a68",false); 
+			// UUID uuid = new UUID(2852401); // "002b8631-0000-1000-8000-00805f9b34fb"
 			String url = "btspp://localhost:" + uuid.toString() + ";name=BluetoothRemote";
 			notifier = (StreamConnectionNotifier)Connector.open(url);
 		} catch (Exception e) {
